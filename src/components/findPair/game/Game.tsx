@@ -7,6 +7,7 @@ interface IGame {
 }
 
 const Game: FC<IGame> = ({lvl}) => {
+  const [isCompleted, setIsCompleted] = useState(false)
   const [field, setField] = useState<number[][]>([[]])
   const [guessed, setGuessed] = useState<number[]>([])
 
@@ -71,10 +72,27 @@ const Game: FC<IGame> = ({lvl}) => {
     fillField()
     setActive({number: 0, id: -1, jd: -1})
   }, [lvl]) 
+  console.log(score);
   
+  useEffect(() => {
+    if (lvl === 'easy' && guessed.length === 10) {
+      setIsCompleted(true)
+    } else if (lvl === 'medium' && guessed.length === 15) {
+      setIsCompleted(true)
+    } else if (guessed.length === 20 ) {
+      setIsCompleted(true)
+    }
+  }, [guessed, lvl])
+
+  const closeCompleted = () => {
+    setIsCompleted(false)
+    setGuessed([])
+    setScore(0)
+  }
+
   return (
     <div className={styles.game}>
-      <p>score: {score}</p>
+      <p>Score: <span>{score}</span></p>
       {field && field.map((string, jd) => {
         return (
           <div key={jd} className={styles.string}>
@@ -84,6 +102,13 @@ const Game: FC<IGame> = ({lvl}) => {
           </div>
         )
       })}
+      {isCompleted && <div className={styles.completed}>
+        <div className={styles.congratulation}>
+          <button className={styles.close_button} onClick={() => closeCompleted()}>X</button>
+          <p>You win!</p>
+          <p>Your score: <span>{score}</span></p>
+        </div>
+      </div>}
     </div>
   )
 }

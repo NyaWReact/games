@@ -5,10 +5,10 @@
   width: 100%;
   height: 50px;
   margin: 10px;
-
   background-color: transparent;
   transition: background 0.3s;
   perspective: 1000px;
+
 
   .inner_show{
     transform: rotateY(180deg);
@@ -19,6 +19,7 @@
     transform-style: preserve-3d;
     width: 100%;
     height: 100%;
+
     
     .front, .back {
       width: 100%;
@@ -26,6 +27,8 @@
       position: absolute;
       -webkit-backface-visibility: hidden;
       backface-visibility: hidden;
+      border-radius: 4px;
+
     }
     .front {
       background-color: #7c4d4d;

@@ -36,7 +36,6 @@ const Card: FC<ICard> = ({number, active, setActive, id, jd, setGuessed, guessed
     else if (active.number === 0) {
       setActive({number, id, jd})
     } else {
-      console.log(secondActive);
       
       if (secondActive.number === 0 && (active.id !== id || active.jd !== jd)) {
         setSecondActive({number, id, jd})
@@ -49,7 +48,8 @@ const Card: FC<ICard> = ({number, active, setActive, id, jd, setGuessed, guessed
         }, 700)
       } 
     }
-
+    
+    
   }
   useEffect(() => {
     if (guessed.includes(number)) {

@@ -1,10 +1,20 @@
-import { Link } from 'react-router-dom'
-import styles from './Header.module.scss'
 
-const Header = () => {
+import styles from './Header.module.scss'
+import { Dispatch, FC, SetStateAction } from 'react'
+
+interface IHeader {
+  setIsShowMenu: Dispatch<SetStateAction<boolean>>
+}
+
+const Header: FC<IHeader> = ({setIsShowMenu}) => {
+
+  const openMenu = () => {
+    setIsShowMenu(true)
+  }
+
   return (
     <header className={styles.header}>
-      <Link to={'/findPair'}>FindPair</Link>
+      <p onClick={() => openMenu() } className={styles.menu}>Menu</p>
     </header>
   )
 }

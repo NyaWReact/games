@@ -1,0 +1,22 @@
+.menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  position: absolute;
+  background-color: #313131;
+
+
+  .link {
+    text-decoration: none;
+    color: white;
+    border: none;
+    border-bottom: solid 1px white;
+    padding: 4px 16px;
+
+  }
+
+}
