@@ -4,7 +4,7 @@ import { Lvl } from './lvl/Lvl'
 import { Game } from './game/Game'
 
 const FindPair = () => {
-  const [lvl, setLvl] = useState<string>('medium')
+  const [lvl, setLvl] = useState<string | undefined>('medium')
 
   return (
     <div className={styles.find_pair}>

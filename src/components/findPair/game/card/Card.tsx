@@ -1,14 +1,33 @@
-import { useEffect, useState } from 'react'
+import { Dispatch, FC, SetStateAction, useEffect, useState } from 'react'
 import styles from './Card.module.scss'
 import clsx from 'clsx'
 
-const Card = ({number, active, setActive, id, jd, setGuessed, guessed, setScore,score, setSecondActive, secondActive}) => {
+interface Active {
+  number: number
+  id: number
+  jd: number
+}
+
+interface ICard {
+  number: number,
+  active: Active
+  id: number
+  jd: number
+  guessed: number[]
+  secondActive: Active
+  setScore: Dispatch<SetStateAction<number>>
+  setActive: Dispatch<SetStateAction<Active>>
+  setSecondActive: Dispatch<SetStateAction<Active>>
+  setGuessed: Dispatch<SetStateAction<number[]>>
+}
+
+const Card: FC<ICard> = ({number, active, setActive, id, jd, setGuessed, guessed, setScore, setSecondActive, secondActive}) => {
   
   const [isShow, setIsShow] = useState(false)
   const click = () => {
     if (active.number === number && (active.id !== id || active.jd !== jd) ) {
       if (!guessed.includes(number) && secondActive.number !== active.number) {
-        setScore(score=> score+1)
+        setScore((score: number) => score+1)
       }
       setSecondActive({number: 0, id: -1, jd: -1})
       setActive({number: 0, id: -1, jd: -1})
@@ -23,7 +42,7 @@ const Card = ({number, active, setActive, id, jd, setGuessed, guessed, setScore,
         setSecondActive({number, id, jd})
         setTimeout(() => {
           if (!guessed.includes(number) && secondActive.number !== active.number) {
-            setScore(score=> score+1)
+            setScore((score: number)=> score+1)
           }
           setSecondActive({number: 0, id: -1, jd: -1})
           setActive({number: 0, id: -1, jd: -1})
