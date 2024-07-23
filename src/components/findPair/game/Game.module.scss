@@ -1,0 +1,12 @@
+.game {
+  width: 100%;
+  margin: 30px 0px;
+  display: flex;
+  flex-direction: column;
+
+  .string {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+}
