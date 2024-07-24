@@ -1,18 +1,21 @@
 .menu {
-  font-family: 'zector';
+  font-family: 'Raleway';
+  font-weight: 200;
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100vw;
   height: 100vh;
 
-  background: url('background/menu.jpg');
+  background: url('https://images.hdqwalls.com/download/mountains-clouds-illustration-minimalism-eo-2048x1152.jpg');
   background-repeat: no-repeat;
   background-size: cover;
 
   .title {
+    text-transform: uppercase;
     margin: 20px 0;
     font-size: 60px;
+    font-weight: 400;
 
   }
 
@@ -21,6 +24,7 @@
     flex-direction: column;
 
     .link {
+      text-transform: uppercase;
       text-decoration: none;
       color: white;
       border: none;
