@@ -1,11 +1,16 @@
 .header {
   position: absolute;
-  background-color: #7c7c7c; 
+  // background-color: #ffffff55; 
   width: 100vw;
   left: 0;
   top: 0;
 
   .menu {
-    width: 100%;
+    text-decoration: none;
+    padding: 0 6px;
+    color: white;
+    border-bottom: solid 1px white;
+
+    // width: 100%;
   }
 }

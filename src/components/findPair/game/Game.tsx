@@ -72,7 +72,7 @@ const Game: FC<IGame> = ({lvl}) => {
     fillField()
     setActive({number: 0, id: -1, jd: -1})
   }, [lvl]) 
-  console.log(score);
+
   
   useEffect(() => {
     if (lvl === 'easy' && guessed.length === 10) {

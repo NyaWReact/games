@@ -1,0 +1,18 @@
+.letters { 
+  display: grid;
+  grid-template-columns: repeat(8, 50px);
+  // gap: 10px;
+  .letter {
+    box-sizing: border-box;
+    background-color: #444444;
+    border-radius: 1px;
+    border: 1px solid #000;
+    width: 40px;
+    height: 40px;
+  }
+
+  .disable_letter {
+    background-color: #6d6d6d;
+
+  }
+}

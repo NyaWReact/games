@@ -23,6 +23,7 @@ interface ICard {
 
 const Card: FC<ICard> = ({number, active, setActive, id, jd, setGuessed, guessed, setScore, setSecondActive, secondActive}) => {
   
+
   const [isShow, setIsShow] = useState(false)
   const click = () => {
     if (active.number === number && (active.id !== id || active.jd !== jd) ) {
@@ -66,11 +67,10 @@ const Card: FC<ICard> = ({number, active, setActive, id, jd, setGuessed, guessed
     <div className={clsx(styles.card, isShow && styles.show)} onClick={() => click()} >
       <div className={clsx(styles.inner, isShow && styles.inner_show)}>
         <div className={styles.front}>
-
+          <img src="findPair/backCard_cat.png" alt="" />
         </div>
         <div className={styles.back}>
           {number}
-
         </div>
       </div>
     </div> 

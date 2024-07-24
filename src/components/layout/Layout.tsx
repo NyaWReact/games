@@ -1,20 +1,22 @@
+
 import { Header } from './header/Header'
 import styles from './Layout.module.scss'
 
-import { Outlet } from "react-router-dom"
-import { Menu } from './menu/Menu'
-import { useState } from 'react'
+import { Outlet, useLocation } from "react-router-dom"
+
 
 
 const Layout = () => {
-  const [isShowMenu, setIsShowMenu] = useState(false)
+const location = useLocation()  
 
   return (
     <div className={styles.layout}>
-
-      <Header setIsShowMenu={setIsShowMenu}/>
+      <div className={styles.wrapper}>
+      {location.pathname !== '/' && <Header/>}
+      
       <Outlet/>
-      {isShowMenu &&<Menu setIsShowMenu={setIsShowMenu}/>}
+
+      </div>
     </div>
   )
 }

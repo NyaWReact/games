@@ -1,19 +1,21 @@
 import { Link } from 'react-router-dom'
 import styles from './Menu.module.scss'
-import { Dispatch, FC, SetStateAction } from 'react'
+import { FC,} from 'react'
 
 interface IMenu {
-  setIsShowMenu: Dispatch<SetStateAction<boolean>>
+  
 }
 
-const Menu: FC<IMenu> = ({setIsShowMenu}) => {
-  const menu = () => {
-    setIsShowMenu(false)
-  }
+const Menu: FC<IMenu> = () => {
+
 
   return (
     <div className={styles.menu}>
-      <Link to={'/findPair'} onClick={() => menu()} className={styles.link}>FindPair</Link>      
+      <h1 className={styles.title}>Nya_Menu</h1>
+      <nav className={styles.navigate}>
+        <Link to={'/findPair'} className={styles.link}>Find_Pair</Link>      
+        <Link to={'/gallows'} className={styles.link}>Gallows</Link>      
+      </nav>
     </div>
   )
 }

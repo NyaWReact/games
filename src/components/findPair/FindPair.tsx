@@ -7,8 +7,10 @@ const FindPair = () => {
   const [lvl, setLvl] = useState<string | undefined>('medium')
   return (
     <div className={styles.find_pair}>
-      <Lvl setLvl={setLvl} lvl={lvl}/>
-      <Game lvl={lvl}/>
+      <div className={styles.wrapper}>
+        <Lvl setLvl={setLvl} lvl={lvl}/>
+        <Game lvl={lvl}/>
+      </div>
     </div>
   )
 }
