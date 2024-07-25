@@ -1,18 +1,26 @@
 .letters { 
-  display: grid;
-  grid-template-columns: repeat(8, 50px);
-  // gap: 10px;
+  width: 100%;
+  max-width: 370px;
+
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 20px;
+
   .letter {
     box-sizing: border-box;
-    background-color: #444444;
-    border-radius: 1px;
+    background-color: #ffffffda;
+    color: black;
+    font-size: 18px;
+    border-radius: 8px;
     border: 1px solid #000;
     width: 40px;
     height: 40px;
+    margin: 2px;
   }
 
   .disable_letter {
-    background-color: #6d6d6d;
+    background-color: #ffffff3d;
 
   }
 }

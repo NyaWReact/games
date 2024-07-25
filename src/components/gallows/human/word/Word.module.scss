@@ -1,0 +1,9 @@
+.word {
+  display: flex;
+  justify-content: center;
+
+  .letter {
+    font-size: 24px;
+    color: black;
+  }
+}

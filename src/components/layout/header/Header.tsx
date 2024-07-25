@@ -9,7 +9,7 @@ interface IHeader {
 
 const Header: FC<IHeader> = () => {
   return (
-    <header className={styles.header}>
+    <header className={styles.header} >
       <Link to={'/'} className={styles.menu}>Menu</Link>
     </header>
   )

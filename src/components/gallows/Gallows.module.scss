@@ -1,4 +1,23 @@
 .gallows {
   width: 100%;
-  min-width: 320px;
+  min-height: 100vh;
+  margin: 0 auto;
+  background: url('/findPair/background.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-top: 40px;
+  padding-bottom: 10px;
+  
+  display: flex;
+  justify-content: center;
+
+  .wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    padding: 0 6px;
+    width: clamp(720px, 17.5rem, 280px);
+    overflow-y: hidden;
+  }
 }
